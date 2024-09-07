@@ -2,6 +2,7 @@ package learning.springframework.spring5webapp.domain;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -33,4 +34,34 @@ public class Author {
     public void setLastName(String lastName) { this.lastName = lastName; }
     public Set<Book> getBooks() { return books; }
     public void setBooks(Set<Book> books) { this.books = books; }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", books=" + books +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Author author = (Author) o;
+        return Objects.equals(id, author.id);
+
+        // Code in lesson (2.15)
+        // return id != null ? id.equals(author.id) : author.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+
+        // Code in lesson (2.15)
+        // return id != null ? id.hashCode() : 0;
+    }
 }
