@@ -8,6 +8,7 @@ import java.util.Objects;
 
 @Entity
 public class Publisher {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
