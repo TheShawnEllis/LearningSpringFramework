@@ -9,7 +9,7 @@ import learning.springframework.spring5webapp.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-//LEARNING: The bootstrap class is used to initialize data in the database
+// LEARNING: The bootstrap class is used to initialize data in the database
 //  CommandLineRunner is an interface used to run instances of it when the application is started
 //  @Component annotation is used to indicate that the class is a Spring managed component
 @Component
@@ -19,7 +19,7 @@ public class BootStrapData implements CommandLineRunner {
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
 
-    //LEARNING: Constructor injection is used to inject the AuthorRepository and BookRepository
+    // LEARNING: Constructor injection is used to inject the AuthorRepository and BookRepository
     //  Because the class is annotated with @Component, Spring will automatically inject the dependencies when it calls this constructor
     public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
@@ -46,7 +46,7 @@ public class BootStrapData implements CommandLineRunner {
         Book ericBook = new Book("Domain Driven Design", "123123");
         eric.getBooks().add(ericBook);
         ericBook.getAuthors().add(eric);
-        //LEARNING: Save the author and book to the H2 database
+        // LEARNING: Save the author and book to the H2 database
         authorRepository.save(eric);
         bookRepository.save(ericBook);
 

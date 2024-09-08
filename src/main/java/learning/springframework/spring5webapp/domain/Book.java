@@ -51,7 +51,7 @@ public class Book {
     public Publisher getPublisher() { return publisher; }
     public void setPublisher(Publisher publisher) { this.publisher = publisher; }
 
-    //LEARNING: Its good practice to add a custom to print user-friendly output for example in logging.
+    // LEARNING: Its good practice to add a custom to print user-friendly output for example in logging.
     @Override
     public String toString() {
         return "Book{" +
@@ -61,7 +61,7 @@ public class Book {
                 '}';
     }
 
-    //LEARNING: When working with entities, it is important to implement equals() and hashCode() methods to compare, identify, and search when managing objects.
+    // LEARNING: When working with entities, it is important to implement equals() and hashCode() methods to compare, identify, and search when managing objects.
     //  The equals() method compares the current object with the object passed as an argument and returns true if they are equal.
     //  The hashCode() method returns a hash code value for the object. This value is used to identify the object in a collection.
     // The equals() and hasCode() methods can be auto-generated.

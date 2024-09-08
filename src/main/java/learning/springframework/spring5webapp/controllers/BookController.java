@@ -20,7 +20,9 @@ public class BookController {
     @RequestMapping("/books")
     public String getBooks(Model model) {
 
-        // LEARNING: The model is added so that at run time when the URL "/books" is hit, the model will be populated with the list of books
+        // LEARNING: The model is added so that at run time when the URL "/books" is hit
+        //  The model will be populated with an iterable using the repository of list of books
+        //  ThymeLeaf will use this iterable object in the html file
         model.addAttribute("books", bookRepository.findAll());
 
         return "books/list";
