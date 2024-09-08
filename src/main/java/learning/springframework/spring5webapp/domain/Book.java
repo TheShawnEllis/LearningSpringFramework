@@ -56,7 +56,6 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", authors=" + authors +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
                 '}';

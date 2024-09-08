@@ -16,13 +16,13 @@ public class BookController {
         this.bookRepository = bookRepository;
     }
 
-    // LEARNING: @RequestMapping annotation is used to map web requests onto specific handler classes and/or handler methods
+    // LEARNING: @RequestMapping annotation is used to map web requests onto specific controller handler classes or handler methods
     @RequestMapping("/books")
     public String getBooks(Model model) {
 
         // LEARNING: The model is added so that at run time when the URL "/books" is hit, the model will be populated with the list of books
         model.addAttribute("books", bookRepository.findAll());
 
-        return "books";
+        return "books/list";
     }
 }

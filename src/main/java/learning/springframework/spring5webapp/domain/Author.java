@@ -40,7 +40,6 @@ public class Author {
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", books=" + books +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';

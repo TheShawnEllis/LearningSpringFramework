@@ -31,30 +31,42 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("Started in Bootstrap");
 
+        // Create a publisher and save
+        Publisher thinkPublisher = new Publisher(
+            "Think Publisher",
+            "1234 Main St",
+            "Springfield",
+            "IL",
+            "62701"
+        );
+        publisherRepository.save(thinkPublisher);
+
+        // Create an author and book
         Author eric = new Author("Eric", "Evans");
         Book ericBook = new Book("Domain Driven Design", "123123");
         eric.getBooks().add(ericBook);
         ericBook.getAuthors().add(eric);
-
         //LEARNING: Save the author and book to the H2 database
         authorRepository.save(eric);
         bookRepository.save(ericBook);
 
+        // Create another author and book
         Author rod = new Author("Rod", "Johnson");
         Book rodBook = new Book("J2EE Development without EJB", "3939459459");
         rod.getBooks().add(rodBook);
         rodBook.getAuthors().add(rod);
-
         authorRepository.save(rod);
         bookRepository.save(rodBook);
 
-        Publisher thinkPublisher = new Publisher(
-                "1234 Main St",
-                "Springfield",
-                "IL",
-                "62701"
-        );
+        // Set the publisher for the books
+        rodBook.setPublisher(thinkPublisher);
+        ericBook.setPublisher(thinkPublisher);
+        bookRepository.save(rodBook);
+        bookRepository.save(ericBook);
 
+        // Add the books to the publisher
+        thinkPublisher.getBooks().add(rodBook);
+        thinkPublisher.getBooks().add(ericBook);
         publisherRepository.save(thinkPublisher);
 
         System.out.println("Started in Bootstrap");
