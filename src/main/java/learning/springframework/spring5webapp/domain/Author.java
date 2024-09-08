@@ -8,6 +8,7 @@ import java.util.Set;
 
 @Entity
 public class Author {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -39,7 +40,6 @@ public class Author {
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", books=" + books +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';

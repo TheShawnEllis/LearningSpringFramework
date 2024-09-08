@@ -1,0 +1,38 @@
+<!--
+  LEARNING: This is a Thymeleaf template file that will be rendered by the Spring Boot application to display a list of books.
+    - The ThymeLeaf namespace needs to be declared in the HTML file. to function. See the xmlns:th attribute in the <html> tag.
+-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework App</title>
+</head>
+<body>
+<h1>Spring Framework App</h1>
+<h2>Book List</h2>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Publisher</th>
+    <th>ISBN</th>
+  </tr>
+  <!--
+    LEARNING: The th:each attribute is a Thymeleaf attribute that iterates over a collection of objects. It can only be used with the <tr> tag after adding the namespace declaration.
+    The ${books} variable is a model attribute that is passed to the Thymeleaf template by the Spring Boot application.
+    The ${books} variable is a collection of Book objects.
+    The ${book} variable is a reference to the current Book object in the iteration.
+  -->
+  <tr th:each="book : ${books}">
+    <td th:text="${book.id}">1</td>
+    <td th:text="${book.title}">Spring Boot in Action</td>
+    <td th:text="${book.publisher.name}">Craig Walls</td>
+    <td th:text="${book.isbn}">9781617292545</td>
+  </tr>
+</table>
+
+</body>
+</html>
