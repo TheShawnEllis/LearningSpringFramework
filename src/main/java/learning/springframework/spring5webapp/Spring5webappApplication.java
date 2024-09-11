@@ -11,10 +11,17 @@ import org.springframework.context.ApplicationContext;
 import javax.swing.*;
 import java.sql.SQLOutput;
 
-//LEARNING: When working in Spring, changes to source code have need to have the app restarted. To automatically restart the app when the code is updated:
-//	Add spring-boot-devtools dependency to the pom.xml file
-//	Enable "Build project automatically" checkbox under Settings > Build, Execution Deployment > Compiler
-//	Enable "Allow auto-make to start..." checkbox under Settings > Advanced Settings
+//LEARNING: Setting up project for auto-build on code change
+// 	When working in Spring, changes to source code have need to have the app restarted. To automatically restart the app when the code is updated:
+//	1. Add spring-boot-devtools dependency to the pom.xml file
+//	2. Enable "Build project automatically" checkbox under Settings > Build, Execution Deployment > Compiler
+//	3. Enable "Allow auto-make to start..." checkbox under Settings > Advanced Settings
+
+//LEARNING: Setting up Spring Boot Actuator for monitoring
+//	Spring Actuator automatically exposes endpoints for metrics. Ex: url/health  url/info
+// 	To expose endpoints update properties file: management.endpoints.web.exposure.include=health,info
+//	List of endpoints to enable for actuator: https://docs.spring.io/spring-boot/reference/actuator/endpoints.html#page-title
+
 
 
 @SpringBootApplication
