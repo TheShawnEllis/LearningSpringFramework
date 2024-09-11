@@ -8,8 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import javax.swing.*;
-import java.sql.SQLOutput;
 
 //LEARNING: Setting up project for auto-build on code change
 // 	When working in Spring, changes to source code have need to have the app restarted. To automatically restart the app when the code is updated:
