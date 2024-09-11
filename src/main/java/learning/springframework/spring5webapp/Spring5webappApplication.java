@@ -11,6 +11,12 @@ import org.springframework.context.ApplicationContext;
 import javax.swing.*;
 import java.sql.SQLOutput;
 
+//LEARNING: When working in Spring, changes to source code have need to have the app restarted. To automatically restart the app when the code is updated:
+//	Add spring-boot-devtools dependency to the pom.xml file
+//	Enable "Build project automatically" checkbox under Settings > Build, Execution Deployment > Compiler
+//	Enable "Allow auto-make to start..." checkbox under Settings > Advanced Settings
+
+
 @SpringBootApplication
 public class Spring5webappApplication {
 
